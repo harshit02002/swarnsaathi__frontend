@@ -1,0 +1,122 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+ 
+.example-sidenav{
+  // background: #FF4081 !important;
+  // background: #3f51b5 !important;
+  background-color: #313440;
+}
+ 
+.nav-list{
+  a:hover{
+    box-shadow: inset;
+  }
+}
+ 
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+    display: block;
+  }
+ 
+  h1.example-app-name {
+    margin-left: 8px;
+    text-align: center;
+    font-size: larger;
+  }
+ 
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  .mgl{
+      position: initial;
+  }
+ 
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+ 
+ 
+ 
+  .example-tree-invisible {
+    display: none;
+  }
+ 
+  .example-tree ul,
+  .example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+ 
+  /*
+   * This padding sets alignment of the nested nodes.
+   */
+  .example-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+    background-color: #313440;
+  }
+ 
+  /*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+  .example-tree div[role=group] > .mat-tree-node {
+    padding-left: 40px;
+    background-color: #313440;
+  }
+ 
+  .mat-tree-node{
+    background-color: #313440;
+  }
+ 
+  .node-elem {
+    padding:15px;
+    cursor: pointer;
+    font-size: medium;
+    width: 100%;
+    background-color: #313440;
+    color: white;
+  }
+ 
+  .node-elem-nest {
+    padding:5px;
+    font-size: medium;
+    cursor: pointer;
+    width: 100%;
+    background-color: #313440;
+    color: white;
+  }
+  .node-elem:hover {
+    border-style: solid;
+    border-color: whitesmoke;
+    box-shadow: 2px 2px 2px #FF4081;
+  }
+  .node-elem:active{
+    border-style: solid;
+    border-color: whitesmoke;
+    box-shadow: 2px 2px 2px #FF4081;
+  }
+  .node-elem-nest:hover{
+    border-style: solid;
+    border-color: whitesmoke;
+    box-shadow: 2px 2px 2px #FF4081;
+  }
+  .node-elem-nest:active{
+    border-style: solid;
+    border-color: whitesmoke;
+    box-shadow: 2px 2px 2px #FF4081;
+  }

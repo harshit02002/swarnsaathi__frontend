@@ -1,0 +1,110 @@
+<!-- <mat-card>
+    <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Email" formControlName="email">
+      <mat-error>Email Invalid</mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+      <mat-error>Password Invalid</mat-error>
+    </mat-form-field>
+  </p>
+
+  <div class="button">
+    <button type="button" mat-button (click)="goToSignup()" >Signup</button>
+    <button type="submit" mat-button [disabled]="activeSubmit">Login</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card> -->
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1
+          class="my-5 display-5 fw-bold ls-tight"
+          style="color: hsl(218, 81%, 95%)"
+        >
+          <p style="font-size: 65px !important">SWARNSARTHI</p>
+        </h1>
+        <span style="color: hsl(218, 81%, 75%); font-size: 23px !important"
+          >Spirited, empathetic youth companions for the elderly</span
+        >
+        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          Many elderly individuals live alone without family or friends nearby
+          to support them. They may require assistance in going for walks and
+          participating in recreational activities. Additionally, they may
+          require access to their medical history and information on nearby
+          hospitals in case of emergencies.
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div
+          id="radius-shape-1"
+          class="position-absolute rounded-circle shadow-5-strong"
+        ></div>
+        <div
+          id="radius-shape-2"
+          class="position-absolute shadow-5-strong"
+        ></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+              <div class="mb-4 row">
+                <mat-form-field>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="Email"
+                    formControlName="email"
+                  />
+                  <mat-error>Email Invalid</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="mb-4 row">
+                <mat-form-field>
+                  <input
+                    type="password"
+                    matInput
+                    placeholder="Password"
+                    formControlName="password"
+                  />
+                  <mat-error>Password Invalid</mat-error>
+                </mat-form-field>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Login
+              </button>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>Don't have an account? Register here</p>
+                <button
+                  type="button"
+                  (click)="goToSignup()"
+                  class="btn btn-success btn-block mb-4"
+                >
+                  Sign up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

@@ -1,0 +1,60 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="example-toolbar">
+        <mat-grid-list cols="12" rows="2" class="mgl">
+            <mat-grid-tile colspan="2" rowspan="2">
+                <button style="position: absolute; left:10px" mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="10" rowspan="2">
+                <h1 class="example-app-name">Volunteer Profile</h1>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </mat-toolbar>
+ 
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav class="example-sidenav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" style="min-width: 15vw">
+ 
+        <mat-nav-list class="nav-list">
+          <!-- <a mat-list-item routerLink="add-organization">Add Organization</a>
+          <a mat-list-item routerLink="view-organization-list">View Organizations</a>
+          <a mat-list-item (click)="logout()">Logout</a> -->
+          <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+            <!-- This is the tree node template for leaf nodes -->
+            <!-- There is inline padding applied to this node using styles.
+              This padding value depends on the mat-icon-button width. -->
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+              <div (click)="nav(node)" class="node-elem">
+                {{node.name}}
+              </div>
+            </mat-tree-node>
+            <!-- This is the tree node template for expandable nodes -->
+            <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+                <div class="mat-tree-node">
+                  <button style="color:white" mat-icon-button matTreeNodeToggle
+                          [attr.aria-label]="'Toggle ' + node.name">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                      {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                  </button>
+                  <div class="node-elem-nest" (click)="nav(node)">
+                    {{node.name}}
+                  </div>
+                </div>
+                <!-- There is inline padding applied to this div using styles.
+                    This padding value depends on the mat-icon-button width.  -->
+                <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
+                    role="group">
+                  <ng-container matTreeNodeOutlet></ng-container>
+              </div>
+            </mat-nested-tree-node>
+          </mat-tree>
+        </mat-nav-list>
+      </mat-sidenav>
+ 
+      <mat-sidenav-content>
+          <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>  
+ 

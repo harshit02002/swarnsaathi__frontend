@@ -1,0 +1,16 @@
+export enum StoreKeys {
+  ACCESS_TOKEN_KEY = 'accessToken',
+  REFRESH_TOKEN_KEY = 'refreshToken',
+  USER_KEY = 'user',
+  ROLES = 'roles',
+  TENANTS = 'tenants',
+  USER_EMAIL = 'email',
+  AFFINITY_RULES = 'affinityRules',
+  RESOURCE_ROLES = 'resourceRoles',
+  ENV_CONFIG = 'envConfig',
+  ROLE_LABELS = 'roleLabels',
+  ROLE_VOLUMES = 'roleVolumes',
+  APP_SCRIPTS = 'appScripts',
+  REDIRECT_URL = 'redirectUrl',
+  FILTERS = 'filters',
+}

@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="mb-4 row">
+      <mat-form-field>
+        <input type="number" matInput placeholder="Enter Your Age" formControlName="age">
+        <mat-error>Age Limit Exceeded</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mb-4 row">
+      <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender" (selectionChange)="onSelectGender($event)">
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="mb-4 row">
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city" (selectionChange)="onSelectCity($event)">
+              <mat-option value="delhi">Delhi</mat-option>
+              <mat-option value="mumbai">Mumbai</mat-option>
+              <mat-option value="banglore">Banglore</mat-option>
+              <mat-option value="pune">Pune</mat-option>
+              <mat-option value="kolkata">Kolkata</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="mb-4 row">
+            <mat-form-field>
+              <textarea matInput placeholder="Enter Your Address" formControlName="address" rows='4'></textarea>
+              <mat-error>Enter a valid address</mat-error>
+            </mat-form-field>
+          </div>
+    <!-- Submit button -->
+    <button type="submit" [disabled]="activeSubmit" class="btn btn-primary btn-block mb-4">
+      Submit
+    </button>
+  </form>
